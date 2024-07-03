@@ -89,8 +89,8 @@
           disabledField: 'dis'
         });
         assert.deepEqual(test.selectize.options, {
-          'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: false, styles: '', classes: '' },
-          'b': { text: 'Item B', value: 'b', grp: ['Group 1', 'Group 2'], $order: 2, dis: false, styles: '', classes: '' }
+          'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: false, title: '', styles: '', classes: '' },
+          'b': { text: 'Item B', value: 'b', grp: ['Group 1', 'Group 2'], $order: 2, dis: false, title: '', styles: '', classes: '' }
         });
         assert.deepEqual(test.selectize.optgroups, {
           'Group 1': { label: 'Group 1', val: 'Group 1', $order: 3, dis: false },
@@ -113,8 +113,8 @@
           disabledField: 'dis'
         });
         assert.deepEqual(test.selectize.options, {
-          'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: true, styles: '', classes: '' },
-          'b': { text: 'Item B', value: 'b', grp: ['Group 1', 'Group 2'], $order: 2, dis: false, styles: '', classes: '' }
+          'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: true, title: '', styles: '', classes: '' },
+          'b': { text: 'Item B', value: 'b', grp: ['Group 1', 'Group 2'], $order: 2, dis: false, title: '', styles: '', classes: '' }
         });
         assert.deepEqual(test.selectize.optgroups, {
           'Group 1': { label: 'Group 1', val: 'Group 1', $order: 3, dis: false },
@@ -134,7 +134,8 @@
           titleField: 'til'
         });
         assert.deepEqual(test.selectize.options, {
-          'a': { text: 'Item A', value: 'a', grp: ['Group 1'], $order: 1, dis: false, til: 'Title A', styles: '', classes: '' },
+          'a': { text: 'Item A', value: 'a', grp: 'Group 1', $order: 1, dis: false, til: 'Title A', styles: '', classes: '' },
+          'b': { text: 'Item B', value: 'b', grp: 'Group 1', $order: 2, dis: false, til: '', styles: '', classes: '' },
         });
       });
       it('should add options in text form (no html entities)', function () {
