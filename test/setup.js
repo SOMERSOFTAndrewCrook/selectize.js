@@ -86,7 +86,7 @@
           '</select>'].join(''), {
           optgroupValueField: 'val',
           optgroupField: 'grp',
-          disabledField: 'dis',
+          disabledField: 'dis'
         });
         assert.deepEqual(test.selectize.options, {
           'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: false, styles: '', classes: '' },
