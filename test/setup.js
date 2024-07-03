@@ -86,7 +86,7 @@
           '</select>'].join(''), {
           optgroupValueField: 'val',
           optgroupField: 'grp',
-          disabledField: 'dis'
+          disabledField: 'dis',
         });
         assert.deepEqual(test.selectize.options, {
           'a': { text: 'Item A', value: 'a', grp: ['Group 1', 'Group 2'], $order: 1, dis: false, styles: '', classes: '' },
@@ -120,6 +120,22 @@
           'Group 1': { label: 'Group 1', val: 'Group 1', $order: 3, dis: false },
           'Group 2': { label: 'Group 2', val: 'Group 2', $order: 4, dis: true }
         }, '2');
+      });
+      it('should allow respect title attribute of option', function () {
+        var test = setup_test(['<select>',
+          '<optgroup label="Group 1">',
+          '<option value="a" title="Title A">Item A</option>',
+          '<option value="b">Item B</option>',
+          '</optgroup>',
+          '</select>'].join(''), {
+          optgroupValueField: 'val',
+          optgroupField: 'grp',
+          disabledField: 'dis',
+          titleField: 'til'
+        });
+        assert.deepEqual(test.selectize.options, {
+          'a': { text: 'Item A', value: 'a', grp: ['Group 1'], $order: 1, dis: false, til: 'Title A', styles: '', classes: '' },
+        });
       });
       it('should add options in text form (no html entities)', function () {
         var test = setup_test('<select><option selected value="a">&lt;hi&gt;</option></select>', {});

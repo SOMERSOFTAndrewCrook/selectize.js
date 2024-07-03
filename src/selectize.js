@@ -2409,6 +2409,11 @@ $.extend(Selectize.prototype, {
 		if (templateName === 'option' || templateName === 'item') {
 			html.attr('data-value', value || '');
 		}
+    if (templateName === 'option' || templateName === 'item') {
+      if (data[self.settings.titleField]) {
+        html.attr('title', data[self.settings.titleField]);
+      }
+    }
 
 		// update cache
 		if (cache) {

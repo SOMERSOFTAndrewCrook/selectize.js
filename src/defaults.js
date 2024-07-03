@@ -37,6 +37,7 @@ Selectize.defaults = {
   valueField: 'value',
   labelField: 'text',
   disabledField: 'disabled',
+  titleField: 'title',
   optgroupLabelField: 'label',
   optgroupValueField: 'value',
   lockOptgroupOrder: false,
